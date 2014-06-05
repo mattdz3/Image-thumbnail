@@ -12,8 +12,11 @@ var ThumbnailView = Backbone.View.extend({
 	},
 
 	initialize: function() {
+
+		this.listenTo(this.model, 'change', this.render);
 		
-		$('.container').append(this.el);
+
+		$('.container').prepend(this.el);
 		this.render();
 	},
 
@@ -29,11 +32,6 @@ var ThumbnailView = Backbone.View.extend({
 		new DetailView({model: this.model})
 	},
 
-
-
-
-
-
 })
 
 var getPhotos = new PhotoCollection();
@@ -43,3 +41,15 @@ getPhotos.fetch().done(function() {
 		new ThumbnailView({model: photos});
 	})
 })
+
+$(function(){
+  $('.add-caption').click(function(){
+    var inputVal = $('.input-caption').val()
+    var addNewCaption = newCaption.add({name: inputVal})
+ 
+    addNewCaption.save()
+ 
+  })
+})
+
+var newCaption = new PhotoCollection

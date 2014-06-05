@@ -14,7 +14,7 @@ var DetailView = Backbone.View.extend({
 
 	initialize: function() {
 		$('.container').empty();
-		$('.container').append(this.el);
+		$('.container').prepend(this.el);
 		this.render();
 	},
 
@@ -33,10 +33,9 @@ var DetailView = Backbone.View.extend({
 	goGetPhoto: function() {
 		var getPhoto = new PhotoCollection();
 
-		getPhoto.get('url').done(function() {
-			new DetailView({model: this.model})
-		})
+		getPhoto.get('url')	
 	},
+
 
 })
 
