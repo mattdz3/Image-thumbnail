@@ -14,6 +14,7 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
         <!-- endbuild -->
     </head>
     <body>
@@ -24,12 +25,23 @@
 
 
 
+        <div class="header"> PICS FOR DAYS! </div>
 
+        <div class="container"></div>
 
-        <div class="container">
+        <script type="text/template" class="thumbnail-image">
+      
+            <img src="<%= url %>">
 
-        </div>
+        </script>
 
+        <script type="text/template" class="detail-image"> 
+
+            <img src="<%= url %>">
+
+        </script>
+
+        <div class="footer"></div>
 
 
 
@@ -55,8 +67,8 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
-        <script src="scripts/mainView.js"></script>
         <script src="scripts/ThumbnailView.js"></script>
+        <script src="scripts/mainView.js"></script>
         <!-- endbuild -->
 </body>
 </html>

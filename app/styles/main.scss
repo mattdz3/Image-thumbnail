@@ -1,4 +1,46 @@
 // bower:scss
 // endbower
 
+body {
+    font-family: 'Hammersmith One', sans-serif;
+    background-color: rgb(142, 140, 154);
+}
 
+.header {
+    margin-top: 30px;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.container {
+    width: 900px;
+    height: 100%;
+    margin-left: 280px;
+}
+.thumbnail {
+    display: inline-block;
+}
+
+.thumbnail img {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.detail-pic {
+    display: block;
+}
+
+.detail-pic img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    height: 80px;
+    width: 100%;
+}
