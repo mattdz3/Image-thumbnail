@@ -1,21 +1,25 @@
 "use strict";
 
-var Photo = Backbone.Model.extend({
+var detailPic;
 
-	idAttribute: "_id",
+var newCaption = new PhotoCollection();
 
-	initialize: function() {
-	    this.on('change', function(){
-	      // here is the future
-	    })
-	},
+var getPhotos = new PhotoCollection();
 
+getPhotos.fetch().done(function() {
+	getPhotos.each(function(photos) {
+		new ThumbnailView({model: photos});
+	})
+	detailPic = new DetailView({model: getPhotos.first() })
 })
 
-var PhotoCollection = Backbone.Collection.extend({
+// $(function(){
+//   $('.add-caption').click(function(){
+//     var inputVal = $('.input-caption').val()
+//     var addNewCaption = newCaption.add({name: inputVal})
+ 
+//     addNewCaption.save()
+ 
+//   })
+// })
 
-	model: Photo,
-
-	url: 'http://tiny-pizza-server.herokuapp.com/collections/photos'
-
-})

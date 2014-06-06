@@ -4,38 +4,62 @@ var DetailView = Backbone.View.extend({
 
 	className: "detail-pic",
 
-	template: _.template($('.thumbnail-image').text()),
 	detailTemplate: _.template($('.detail-image').text()),
 
 	events: {
-		"click" : "goGetPhoto",
-		"click .detail-image" : "showThumbnailView",
+		"click .add-photo" : "addPhoto",
+		"click .add-caption" : "addCaption",
 	},
 
 	initialize: function() {
-		$('.container').empty();
-		$('.container').prepend(this.el);
-		this.render();
+
+	this.listenTo(getPhotos, 'add', function(photo){
+    	new ThumbnailView({model: photo})
+    })
+
+    this.listenTo(this.model, 'change', this.render);
+
+	$('.detail-container').prepend(this.el);
+	this.render();
+
 	},
 
 	render: function() {
 		var renderTemp = this.detailTemplate(this.model.attributes)
 		this.$el.html(renderTemp);
+		return this;
 	},
 
-	showThumbnailView: function() {
-		var renderTemp = this.template(this.model.attributes)
-		this.$el.html(renderTemp);
+	addCaption: function() {
+		this.model.set({
+			caption: this.$el.find('.input-caption').val(),
+		});
 
-		new ThumbnailView({model: this.model})
+		getPhotos.add(this.model);
+
+		this.model.save().done(function() {
+			this.$el.find('.status').html('You added a new caption!')
+		});
+
 	},
 
-	goGetPhoto: function() {
-		var getPhoto = new PhotoCollection();
+	addPhoto: function() {
 
-		getPhoto.get('url')	
+		this.model.set({
+			url: this.$el.find('.input-photo').val(),
+			
+		});
+
+		getPhotos.add(this.model);
+
+		this.model.save().done(function() {
+			this.$el.find('.status').html('You saved an image!')
+		});
 	},
 
 
 })
+
+
+
 
