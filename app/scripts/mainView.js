@@ -11,6 +11,7 @@ var DetailView = Backbone.View.extend({
 		"click .add-caption" : "addCaption",
 	},
 
+
 	initialize: function() {
 
 	this.listenTo(getPhotos, 'add', function(photo){

@@ -4,6 +4,11 @@ var Photo = Backbone.Model.extend({
 
 	idAttribute: "_id",
 
+
+	defaults: {
+		caption: ""
+	},
+
 	initialize: function() {
 	    this.on('change', function(){
 	      // here is the future

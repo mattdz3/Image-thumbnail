@@ -35,14 +35,15 @@
         <script type="text/template" class="thumbnail-image">
             <div>
                 <img src="<%= url %>">
-                <%= this.caption %>
+                <div class="thumbnail-caption"> <%= caption ? caption: 'no caption' %> </div>
+                
             </div>
         </script>
 
         <script type="text/template" class="detail-image"> 
 
             <img src="<%= url %>">
-            <div class="caption"> <%= caption ? caption: 'no caption' %> </div>
+            <div class="caption"> "<%= caption ? caption: 'no caption' %>" </div>
             <div class="add-pic">
                 <input class='input input-caption' placeholder="ADD A CAPTION!"></input> 
                 <button class='button add-caption'>ADD</button>
