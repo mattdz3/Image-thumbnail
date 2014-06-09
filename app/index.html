@@ -25,17 +25,22 @@
 
 
 
-        <div class="header"> PICS FOR DAY! </div>
+        <div class="header"> PICS FOR DAY! 
+            <div class="links">
+                <a href="#">HOME</a>
+                <a href="#photos">PIC VIEW</a>
+            </div>
+        </div>
 
         <div class="container"></div>
         <div class="detail-container"></div>
 
-        
+       
 
         <script type="text/template" class="thumbnail-image">
             <div>
-                <img src="<%= url %>">
-                <div class="thumbnail-caption"> <%= caption ? caption: 'no caption' %> </div>
+                <a href="/#photo/<%=  %>"><img src="<%= url %>"> 
+                 <div class="thumbnail-caption"> <%= caption ? caption: 'no caption' %> </div></a>
                 
             </div>
         </script>

@@ -7,8 +7,8 @@ var DetailView = Backbone.View.extend({
 	detailTemplate: _.template($('.detail-image').text()),
 
 	events: {
-		"click .add-photo" : "editPhoto",
-		"click .add-caption" : "addCaption",
+		"click .add-photo"     : "editPhoto",
+		"click .add-caption"   : "addCaption",
 		"click .add-new-photo" : "addPhoto"
 	},
 
@@ -56,18 +56,6 @@ var DetailView = Backbone.View.extend({
 			this.$el.find('.status').html('You edited an image!')
 		});
 	},
-
-	// addPhoto: function() {
-
-	// 	addNewPhoto = new PhotoCollection();
-
-	// 	addNewPhoto.add()
-
-
-		
-		
-	// 	this.$el.find('img').attr('src', 'http://fa-g.org/images/placeholder.png')
-	// },
 })
 
 
