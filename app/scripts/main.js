@@ -1,8 +1,8 @@
 "use strict";
 
-var detailPic;
+var addNewPhoto;
 
-var newCaption = new PhotoCollection();
+var detailPic;
 
 var getPhotos = new PhotoCollection();
 
@@ -13,13 +13,4 @@ getPhotos.fetch().done(function() {
 	detailPic = new DetailView({model: getPhotos.first() })
 })
 
-// $(function(){
-//   $('.add-caption').click(function(){
-//     var inputVal = $('.input-caption').val()
-//     var addNewCaption = newCaption.add({name: inputVal})
- 
-//     addNewCaption.save()
- 
-//   })
-// })
 

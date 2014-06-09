@@ -7,22 +7,22 @@ var DetailView = Backbone.View.extend({
 	detailTemplate: _.template($('.detail-image').text()),
 
 	events: {
-		"click .add-photo" : "addPhoto",
+		"click .add-photo" : "editPhoto",
 		"click .add-caption" : "addCaption",
+		"click .add-new-photo" : "addPhoto"
 	},
 
 
 	initialize: function() {
 
-	this.listenTo(getPhotos, 'add', function(photo){
-    	new ThumbnailView({model: photo})
-    })
+		this.listenTo(getPhotos, 'add', function(photo){
+	    	new ThumbnailView({model: photo})
+	    })
 
-    this.listenTo(this.model, 'change', this.render);
+	    this.listenTo(this.model, 'change', this.render);
 
-	$('.detail-container').prepend(this.el);
-	this.render();
-
+		$('.detail-container').prepend(this.el);
+		this.render();
 	},
 
 	render: function() {
@@ -32,6 +32,7 @@ var DetailView = Backbone.View.extend({
 	},
 
 	addCaption: function() {
+
 		this.model.set({
 			caption: this.$el.find('.input-caption').val(),
 		});
@@ -41,26 +42,32 @@ var DetailView = Backbone.View.extend({
 		this.model.save().done(function() {
 			this.$el.find('.status').html('You added a new caption!')
 		});
-
 	},
 
-	addPhoto: function() {
+	editPhoto: function() {
 
 		this.model.set({
 			url: this.$el.find('.input-photo').val(),
-			
 		});
 
 		getPhotos.add(this.model);
 
 		this.model.save().done(function() {
-			this.$el.find('.status').html('You saved an image!')
+			this.$el.find('.status').html('You edited an image!')
 		});
 	},
 
+	// addPhoto: function() {
 
+	// 	addNewPhoto = new PhotoCollection();
+
+	// 	addNewPhoto.add()
+
+
+		
+		
+	// 	this.$el.find('img').attr('src', 'http://fa-g.org/images/placeholder.png')
+	// },
 })
-
-
 
 

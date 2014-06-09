@@ -30,7 +30,6 @@ var ThumbnailView = Backbone.View.extend({
 		detailPic.remove();
 		detailPic = new DetailView({model: this.model})
 	},
-
 })
 
 

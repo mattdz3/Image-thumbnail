@@ -25,7 +25,7 @@
 
 
 
-        <div class="header"> PICS FOR DAYS! </div>
+        <div class="header"> PICS FOR DAY! </div>
 
         <div class="container"></div>
         <div class="detail-container"></div>
@@ -43,15 +43,21 @@
         <script type="text/template" class="detail-image"> 
 
             <img src="<%= url %>">
-            <div class="caption"> "<%= caption ? caption: 'no caption' %>" </div>
+            <div class="caption"> <%= caption ? caption: 'no caption' %> </div>
+
             <div class="add-pic">
                 <input class='input input-caption' placeholder="ADD A CAPTION!"></input> 
                 <button class='button add-caption'>ADD</button>
             </div>
 
             <div class="add-url">
-                <input class="input input-photo" placeholder="PASTE A URL!"> </input>
-                <button class="button add-photo">SAVE</button>
+                <input class="input input-photo" placeholder="EDIT CURRENT PHOTO!"> </input>
+                <button class="button add-photo">EDIT</button>
+            </div>
+
+            <div class="add-photo-input"> 
+                <input class="input input-new-photo" placeholder="ADD A NEW PHOTO!"> </input>
+                <button class="button add-new-photo">ADD</button>
             </div>
 
         </script>

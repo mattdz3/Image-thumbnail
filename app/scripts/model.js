@@ -6,12 +6,13 @@ var Photo = Backbone.Model.extend({
 
 
 	defaults: {
-		caption: ""
+		caption: "",
+		url: ""
 	},
 
 	initialize: function() {
 	    this.on('change', function(){
-	      // here is the future
+	      // the future is now
 	    })
 	},
 
