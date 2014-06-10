@@ -6,6 +6,9 @@ var ThumbnailView = Backbone.View.extend({
 	
 	template: _.template($('.thumbnail-image').text()),
 
+	events: {
+		// "click" : "showDetailView",
+	},
 
 	initialize: function() {
 
@@ -20,6 +23,12 @@ var ThumbnailView = Backbone.View.extend({
 		var renderTemp = this.template(this.model.attributes)
 		this.$el.html(renderTemp);
 		return this;
+	},
+
+	showDetailView: function() {
+
+		// detailPic.remove();
+		// detailPic = new DetailView({model: this.model})
 	},
 })
 

@@ -27,7 +27,7 @@
 
         <div class="header"> PICS FOR DAY! 
             <div class="links">
-                <a href="#">HOME</a>
+                <a href="">HOME</a>
                 <a href="#photos">PIC VIEW</a>
             </div>
         </div>
@@ -39,8 +39,9 @@
 
         <script type="text/template" class="thumbnail-image">
             <div>
-                <a href="/#photo/<%=  %>"><img src="<%= url %>"> 
-                 <div class="thumbnail-caption"> <%= caption ? caption: 'no caption' %> </div></a>
+                <a href="/#photo/<%= _id %>"><img src="<%= url %>"> 
+                 <div class="thumbnail-caption"> <%= caption ? caption: 'no caption' %> 
+                 </div> </a>
                 
             </div>
         </script>
