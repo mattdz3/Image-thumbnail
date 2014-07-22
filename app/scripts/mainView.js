@@ -1,4 +1,4 @@
-.t"use strict";
+"use strict";
 
 var DetailView = Backbone.View.extend({
 
@@ -19,7 +19,7 @@ var DetailView = Backbone.View.extend({
 	    	new ThumbnailView({model: photo})
 	    })
 
-	    this.listenTo(this.model, 'change', this.render);
+	    // this.listenTo(this.model, 'change', this.render);
 
 		$('.detail-container').prepend(this.el);
 		this.render();

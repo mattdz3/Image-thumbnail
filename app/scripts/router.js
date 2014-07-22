@@ -24,8 +24,6 @@ var Router = Backbone.Router.extend({
 
 	routerHome: function () {
 
-		
-		
 		detailPic = new DetailView({ model: getPhotos.get() })
 
 	},
