@@ -6,7 +6,7 @@ var Router = Backbone.Router.extend({
 
 	routes: {
 		""              : "routerHome",
-		"photos/:id"    : "routerPhotos"
+		"photos/:id"    : "routerPhotos",
 	},
 
 	initialize: function () {
@@ -23,9 +23,7 @@ var Router = Backbone.Router.extend({
 	},
 
 	routerHome: function () {
-
-		detailPic = new DetailView({ model: getPhotos.get() })
-
+		console.log("hey!")
 	},
 
 	routerPhotos: function () {

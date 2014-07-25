@@ -9,17 +9,13 @@ var DetailView = Backbone.View.extend({
 	events: {
 		"click .add-photo"     : "editPhoto",
 		"click .add-caption"   : "addCaption",
-		"click .add-new-photo" : "addPhoto"
+		"click .add-new-photo" : "addPhoto",
 	},
-
 
 	initialize: function() {
 
-		this.listenTo(getPhotos, 'add', function(photo){
-	    	new ThumbnailView({model: photo})
-	    })
-
-	    // this.listenTo(this.model, 'change', this.render);
+		this.listenTo(this.model, 'change', this.render)
+		this.listenTo(this.model, 'add', this.render)
 
 		$('.detail-container').prepend(this.el);
 		this.render();
@@ -34,27 +30,29 @@ var DetailView = Backbone.View.extend({
 	addCaption: function() {
 
 		this.model.set({
-			caption: this.$el.find('.input-caption').val(),
+			caption: $('.input-caption').val(),
 		});
 
-		getPhotos.add(this.model);
-
-		this.model.save().done(function() {
-			this.$el.find('.status').html('You added a new caption!')
-		});
+		getPhotos.add(this.model).save();
 	},
 
 	editPhoto: function() {
 
 		this.model.set({
-			url: this.$el.find('.input-photo').val(),
+			url: $('.input-photo').val(),
 		});
 
 		getPhotos.add(this.model);
 
-		this.model.save().done(function() {
-			this.$el.find('.status').html('You edited an image!')
-		});
+		this.model.save();
+	},
+
+	addPhoto: function() {
+		var addPhoto = new PhotoCollection();
+
+		addPhoto.add({
+			url: $('.input-new-photo').val(),
+		}).save();
 	},
 })
 

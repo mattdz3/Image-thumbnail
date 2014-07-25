@@ -4,7 +4,6 @@ var Photo = Backbone.Model.extend({
 
 	idAttribute: "_id",
 
-
 	defaults: {
 		caption: "",
 		url: ""
