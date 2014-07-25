@@ -1,8 +1,8 @@
 "use strict";
 
-// var myRouter = new Router();
+var myRouter = new Router();
 
-// Backbone.history.start();
+Backbone.history.start();
 
 var addNewPhoto;
 
