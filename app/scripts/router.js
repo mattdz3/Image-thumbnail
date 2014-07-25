@@ -1,35 +1,35 @@
-"use strict";
+// "use strict";
 
-var getPhotos = new PhotoCollection();
+// var getPhotos = new PhotoCollection();
 
-var Router = Backbone.Router.extend({
+// var Router = Backbone.Router.extend({
 
-	routes: {
-		""              : "routerHome",
-		"photos/:id"    : "routerPhotos",
-	},
+// 	routes: {
+// 		""              : "routerHome",
+// 		"photos/:id"    : "routerPhotos",
+// 	},
 
-	initialize: function () {
+// 	initialize: function () {
 
-		getPhotos.fetch().done(function() {
-			getPhotos.each(function(photos) {
-				new ThumbnailView({model: photos});
-			})
+// 		getPhotos.fetch().done(function() {
+// 			getPhotos.each(function(photos) {
+// 				new ThumbnailView({model: photos});
+// 			})
 
-			detailPic = new DetailView({ model: getPhotos.first() })
-		});
+// 			detailPic = new DetailView({ model: getPhotos.first() })
+// 		});
 
-		console.log('WHEEE');
-	},
+// 		console.log('WHEEE');
+// 	},
 
-	routerHome: function () {
-		console.log("hey!")
-	},
+// 	routerHome: function () {
+// 		console.log("hey!")
+// 	},
 
-	routerPhotos: function () {
+// 	routerPhotos: function () {
 
 
-	},
+// 	},
 
-})
+// })
 
